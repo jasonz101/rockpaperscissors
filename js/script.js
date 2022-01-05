@@ -16,12 +16,16 @@ $(".play").click(function() {
     $(".computerChoice").text("paper");
     comp = "paper";
   }
-
   if (input === "rock" || input === "paper" || input === "scissors") {
     $(".userChoice").text(input);
   } else {
     alert("Incorrect Choice Exp. rock,paper or scissors");
   }
+chooseWinner(comp, input); 
+$("input").val("");
+});
+
+function chooseWinner(comp,input){
   if (input === comp) {
     $(".result").text("There's a tie!");
   } else if (
@@ -29,14 +33,15 @@ $(".play").click(function() {
     (input === "paper" && comp === "rock") ||
     (input === "scissors" && comp === "paper")
   ) {
-    $(".result").text("You win!");
+    $(".result").text("You win, you beat an ai!");
   } else {
-    $(".result").text("You lost ;(");
+    $(".result").text("You lost to an ai ;/ ;(");
   }
-$("input").val("");
-});
+}
 
 
+
+// you are out of the if else statement uhh so 
 // I think it went really good
 // yeah I think I need more practice but for the most part I got it
 //educated guess?
